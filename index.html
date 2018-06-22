@@ -16,16 +16,25 @@
 
     <label for="api_key" class="sr-only">api_key</label>
     <input type="text" id="api_key" name="api_key" required>
-    <br><br>
+    <br>
+    <br>
     <label for="external_ids" class="sr-only">external_ids</label>
     <input type="text" id="external_ids" name="external_ids" required>
-    <br><br>
+    <br>
+    <br>
     <button type="submit">
       Submit
     </button>
   </form>
 
   <script src="submitAsJson.js"></script>
+
+  <script>
+    $("form").submit(function (event) {
+      event.preventDefault();
+      submitAsJSON(this);
+    });
+  </script>
 
 </body>
 
