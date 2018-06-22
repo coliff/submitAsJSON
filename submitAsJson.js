@@ -29,7 +29,7 @@ function submitAsJSON(form) {
     var JSONString = JSON.stringify(convertFormToJSON(form)),
         HackyJSONString =  JSONString.slice(0, -1) + ', "trash": "';
 
-    var hackyForm = "<form method='POST'  enctype='text/plain' action='" + $(form).attr('action') + "'>" +
+    var hackyForm = "<form method='POST'  enctype='application/json' action='" + $(form).attr('action') + "'>" +
         "<input name='" + HackyJSONString + "' value='\"}'>" +
     "</form>"
     $(hackyForm).appendTo('body').submit();
